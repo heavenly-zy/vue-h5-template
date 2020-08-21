@@ -1,12 +1,12 @@
-import api from './index'
+import api from "./index"
 // axios
-import request from '@/utils/request'
+import request from "@/utils/request"
 
 // 登录
 export function login(data) {
   return request({
     url: api.Login,
-    method: 'post',
+    method: "post",
     data
   })
 }
@@ -15,7 +15,7 @@ export function login(data) {
 export function getUserInfo(data) {
   return request({
     url: api.UserInfo,
-    method: 'post',
+    method: "post",
     data,
     hideloading: true
   })
@@ -25,7 +25,7 @@ export function getUserInfo(data) {
 export function getUserName(params) {
   return request({
     url: api.UserName,
-    method: 'get',
+    method: "get",
     params,
     hideloading: true
   })

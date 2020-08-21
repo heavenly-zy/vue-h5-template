@@ -1,8 +1,8 @@
-import axios from 'axios'
-import store from '@/store'
-import { Toast } from 'vant'
+import axios from "axios"
+import store from "@/store"
+import { Toast } from "vant"
 // 根据环境不同引入不同api地址
-import { baseApi } from '@/config'
+import { baseApi } from "@/config"
 // create an axios instance
 const service = axios.create({
   baseURL: baseApi, // url = base api url + request url
@@ -21,7 +21,7 @@ service.interceptors.request.use(
       })
     }
     if (store.getters.token) {
-      config.headers['X-Token'] = ''
+      config.headers["X-Token"] = ""
     }
     return config
   },
@@ -39,18 +39,18 @@ service.interceptors.response.use(
     if (res.status && res.status !== 200) {
       // 登录超时,重新登录
       if (res.status === 401) {
-        store.dispatch('FedLogOut').then(() => {
+        store.dispatch("FedLogOut").then(() => {
           location.reload()
         })
       }
-      return Promise.reject(res || 'error')
+      return Promise.reject(res || "error")
     } else {
       return Promise.resolve(res)
     }
   },
   error => {
     Toast.clear()
-    console.log('err' + error) // for debug
+    console.log("err" + error) // for debug
     return Promise.reject(error)
   }
 )

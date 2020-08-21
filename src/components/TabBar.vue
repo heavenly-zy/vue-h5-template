@@ -9,7 +9,7 @@
 </template>
 <script>
 export default {
-  name: 'TabBar',
+  name: "TabBar",
   props: {
     defaultActive: {
       type: Number,
@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     handleChange(value) {
-      this.$emit('change', value)
+      this.$emit("change", value)
     }
   }
 }

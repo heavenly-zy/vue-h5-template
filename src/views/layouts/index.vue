@@ -13,25 +13,25 @@
 </template>
 
 <script>
-import TabBar from '@/components/TabBar'
+import TabBar from "@/components/TabBar"
 export default {
-  name: 'AppLayout',
+  name: "AppLayout",
   data() {
     return {
       tabbars: [
         {
-          title: '首页',
+          title: "首页",
           to: {
-            name: 'Home'
+            name: "Home"
           },
-          icon: 'home-o'
+          icon: "home-o"
         },
         {
-          title: '关于我',
+          title: "关于我",
           to: {
-            name: 'About'
+            name: "About"
           },
-          icon: 'user-o'
+          icon: "user-o"
         }
       ]
     }
@@ -41,7 +41,7 @@ export default {
   },
   methods: {
     handleChange(v) {
-      console.log('tab value:', v)
+      console.log("tab value:", v)
     }
   }
 }
